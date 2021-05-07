@@ -1,0 +1,6 @@
+{% block sw_order_line_items_grid_column_payload_options %}
+    {% parent %}
+    <span>Reg. NO: {{ (item && item.payload && item.payload.customFields && item.payload.customFields.registration_no) || '--' }}</span>
+    <br>
+    <span>Flag: {{ (item && item.payload && item.payload.customFields && item.payload.customFields.flag) || '--' }}</span>
+{% endblock %}

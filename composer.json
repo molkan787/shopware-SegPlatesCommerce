@@ -1,0 +1,23 @@
+{
+  "name": "swag/plugin-skeleton",
+  "description": "Plates ecommerce",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "SegPlatesCommerce\\": "src/"
+    }
+  },
+  "authors": [
+    {
+        "name": "Seghier Dahmane"
+    }
+  ],
+  "extra": {
+    "shopware-plugin-class": "SegPlatesCommerce\\SegPlatesCommerce",
+    "label": {
+      "de-DE": "Plates ecommerce",
+      "en-GB": "Plates ecommerce"
+    }
+  }
+}

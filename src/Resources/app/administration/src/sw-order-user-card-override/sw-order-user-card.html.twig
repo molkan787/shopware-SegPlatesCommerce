@@ -1,0 +1,21 @@
+{% block sw_order_detail_base_order_overview_columns %}
+    {% parent %}
+    <sw-container
+        columns="repeat(auto-fit, minmax(250px, 1fr))"
+        gap="30px">
+            <sw-description-list columns="1fr" grid="1fr">
+                <dt style="padding: 4px;">PROOF OF IDENTITY</dt>
+                <dd style="padding: 4px;">
+                    <button v-if="proof_identity" @click="downloadAttachment('proof_identity')" class="sw-button">Download</button>
+                    <span v-else>---</span>
+                </dd>
+            </sw-description-list>
+            <sw-description-list columns="1fr" grid="1fr">
+                <dt style="padding: 4px;">PROOF OF REGISTRATION OWNERSHIP</dt>
+                <dd style="padding: 4px;">
+                    <button v-if="proof_ownership" @click="downloadAttachment('proof_ownership')" class="sw-button">Download</button>
+                    <span v-else>---</span>
+                </dd>
+            </sw-description-list>
+    </sw-container>
+{% endblock %}

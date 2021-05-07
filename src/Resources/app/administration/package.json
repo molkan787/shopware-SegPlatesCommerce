@@ -1,0 +1,9 @@
+{
+  "name": "plates-commerce",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "license": "MIT",
+  "dependencies": {
+    "mime-types": "^2.1.30"
+  }
+}
