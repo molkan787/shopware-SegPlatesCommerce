@@ -14,5 +14,8 @@
             <argument type="service" id="Shopware\Core\System\SalesChannel\Context\SalesChannelContextPersister"/>
             <argument type="service" id="Shopware\Core\Checkout\Payment\Cart\Token\JWTFactoryV2"/>
         </service>
+        <service id="SegPlatesCommerce\Core\Content\Media\Gallery\GalleryRoute" public="true">
+            <argument type="service" id="media.repository" />
+        </service>
     </services>
 </container>
