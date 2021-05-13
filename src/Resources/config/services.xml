@@ -17,5 +17,9 @@
         <service id="SegPlatesCommerce\Core\Content\Media\Gallery\GalleryRoute" public="true">
             <argument type="service" id="media.repository" />
         </service>
+        <service id="SegPlatesCommerce\Core\Content\Files\FileUploadRoute" public="true">
+            <argument type="service" id="Shopware\Core\Content\Media\File\FileSaver" />
+            <argument type="service" id="Shopware\Core\Content\Media\File\FileNameProvider" />
+        </service>
     </services>
 </container>

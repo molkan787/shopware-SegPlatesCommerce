@@ -15,20 +15,16 @@ Shopware.Component.override('sw-order-user-card', {
     },
     methods: {
         downloadAttachment(name){
-            const data = this[name];
-            const mime = data.substr(5, 100).split(';')[0];
-            console.log('mime', mime);
-            const ext = extension(mime);
-            console.log('ext', ext);
-            const filename = `Order ${this.currentOrder.orderNumber} ${name}.${ext}`;
-            downloadBase64File(data, filename);
+            const mediaId = this[name];
+            const DL = `${window.location.origin}/store-api/v3/files/download?mediaId=${mediaId}`;
+            downloadFile(DL);
         }
     }
 });
 
-function downloadBase64File(linkSource, fileName) {
-    const downloadLink = document.createElement("a");
-    downloadLink.href = linkSource;
-    downloadLink.download = fileName;
-    downloadLink.click();
+function downloadFile(filePath){
+    var link=document.createElement('a');
+    link.href = filePath;
+    link.download = filePath.substr(filePath.lastIndexOf('/') + 1);
+    link.click();
 }
