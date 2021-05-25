@@ -74,7 +74,7 @@ class FileUploadRoute extends AbstractController
                 $message = 'Invalid Extension';
                 break;
             } else {
-                $fileName = $fileName . Random::getInteger(100, 1000);
+                $fileName = $fileName . Random::getInteger(100000, 999999);
                 
                 $mediaId = Uuid::randomHex();
                 $media = [
@@ -95,7 +95,7 @@ class FileUploadRoute extends AbstractController
                 try {
                     $result = $this->upload($file, $fileName, $mediaId, $context);                
                 } catch (\Exception $exception) {
-                    $fileName = $fileName . Random::getInteger(100, 1000);
+                    $fileName = $fileName . Random::getInteger(100000, 999999);
                     $result =  $this->upload($file, $fileName, $mediaId, $context);
                 }
                 array_push($results, $mediaId);
